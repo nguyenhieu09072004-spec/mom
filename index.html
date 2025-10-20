@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Tặng Mẹ 20/10</title>
+<style>
+  html, body {
+    margin: 0;
+    padding: 0;
+    height: 100%;
+    font-family: "Segoe UI", sans-serif;
+    background: linear-gradient(to bottom, #b3e5ff 0%, #e0f7ff 100%);
+    overflow: hidden;
+  }
+
+  .sky {
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(to top, #b3e5ff, #dff7ff);
+    overflow: hidden;
+    z-index: 0;
+  }
+
+  .cloud {
+    position: absolute;
+    background: white;
+    border-radius: 50%;
+    opacity: 0.8;
+    animation: float 60s linear infinite;
+  }
+  .cloud:nth-child(1) { width: 180px; height: 100px; top: 10%; left: -200px; animation-delay: 0s;}
+  .cloud:nth-child(2) { width: 140px; height: 80px; top: 35%; left: -180px; animation-delay: 15s;}
+  .cloud:nth-child(3) { width: 200px; height: 120px; top: 60%; left: -220px; animation-delay: 30s;}
+  @keyframes float {
+    0% { transform: translateX(0); }
+    100% { transform: translateX(140vw); }
+  }
+
+  .flower {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -60%) scale(0.8);
+    opacity: 0;
+    animation: bloom 4s ease-out forwards;
+    z-index: 2;
+    max-width: 85vw;
+    height: auto;
+  }
+  @keyframes bloom {
+    0% { opacity: 0; transform: translate(-50%, -60%) scale(0.6) rotate(-3deg); }
+    50% { opacity: 1; transform: translate(-50%, -60%) scale(1.05) rotate(2deg); }
+    100% { opacity: 1; transform: translate(-50%, -60%) scale(1); }
+  }
+
+  .message {
+    position: absolute;
+    width: 90%;
+    max-width: 600px;
+    left: 50%;
+    bottom: 10%;
+    transform: translateX(-50%);
+    text-align: center;
+    font-size: clamp(16px, 2.5vw, 22px);
+    color: #222;
+    opacity: 0;
+    line-height: 1.5;
+    animation: showText 2s ease-in-out 3.5s forwards;
+    z-index: 3;
+    padding: 10px;
+    background: rgba(255,255,255,0.3);
+    border-radius: 15px;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+    backdrop-filter: blur(5px);
+  }
+  @keyframes showText {
+    to { opacity: 1; }
+  }
+
+  audio { display: none; }
+
+  @media (max-width: 768px) {
+    .flower { transform: translate(-50%, -55%) scale(0.7); }
+    .message { bottom: 8%; }
+  }
+  @media (max-width: 480px) {
+    .flower { transform: translate(-50%, -55%) scale(0.6); }
+    .message { font-size: 15px; bottom: 6%; }
+  }
+</style>
+</head>
+<body>
+
+<div class="sky">
+  <div class="cloud"></div>
+  <div class="cloud"></div>
+  <div class="cloud"></div>
+</div>
+
+<!-- 🌹 Bó hoa mới -->
+<svg class="flower" viewBox="0 0 400 500" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <radialGradient id="petalGrad" cx="50%" cy="50%" r="50%">
+      <stop offset="0%" stop-color="#fff0f0" />
+      <stop offset="100%" stop-color="#ff6b6b" />
+    </radialGradient>
+    <linearGradient id="stemGrad" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#2f7d3a"/>
+      <stop offset="100%" stop-color="#1b4d24"/>
+    </linearGradient>
+    <linearGradient id="wrapGrad" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#a11f1f"/>
+      <stop offset="100%" stop-color="#d84c4c"/>
+    </linearGradient>
+  </defs>
+
+  <!-- Thân hoa -->
+  <rect x="195" y="200" width="10" height="230" rx="5" fill="url(#stemGrad)" />
+  <rect x="205" y="200" width="10" height="230" rx="5" fill="url(#stemGrad)" />
+  <rect x="215" y="200" width="10" height="230" rx="5" fill="url(#stemGrad)" />
+
+  <!-- Các bông hoa chính -->
+  <g transform="translate(200,180)">
+    <circle r="60" cx="0" cy="-60" fill="url(#petalGrad)" />
+    <circle r="55" cx="-70" cy="-20" fill="#ff8c8c" />
+    <circle r="50" cx="70" cy="-20" fill="#ff9b9b" />
+    <circle r="45" cx="0" cy="40" fill="#ffb6b6" />
+    <circle r="40" cx="-40" cy="20" fill="#ffa3a3" />
+    <circle r="38" cx="40" cy="20" fill="#ffc0cb" />
+  </g>
+
+  <!-- Giấy gói hoa -->
+  <path d="M100 330 Q200 440 300 330 L280 460 L120 460 Z" fill="url(#wrapGrad)" stroke="#7a0e0e" stroke-width="2"/>
+  <path d="M150 330 Q200 380 250 330" fill="none" stroke="#7a0e0e" stroke-width="3" />
+
+  <!-- Bóng -->
+  <ellipse cx="200" cy="470" rx="100" ry="10" fill="rgba(0,0,0,0.2)" />
+</svg>
+
+<div class="message">
+  <p>Chúc mẹ 20/10 thật hạnh phúc!<br>
+  Con mong mẹ luôn khoẻ mạnh và vui vẻ,<br>
+  là bầu trời yêu thương mãi che chở con.<br>
+  Con yêu mẹ nhiều lắm ❤️</p>
+</div>
+
+<!-- Nhạc nền tự động -->
+<audio id="bgMusic" autoplay loop muted>
+  <source src="assets/nhacnen.mp3" type="audio/mpeg">
+</audio>
+
+<script>
+  // Khởi động nhạc tự động hợp lệ cả trên di động
+  const audio = document.getElementById('bgMusic');
+  window.addEventListener('load', () => {
+    const playPromise = audio.play();
+    if (playPromise !== undefined) {
+      playPromise.then(() => {
+        setTimeout(() => {
+          audio.muted = false;
+          audio.volume = 0.6;
+        }, 1000);
+      }).catch(() => {
+        console.log("Trình duyệt chặn autoplay, cần chạm tay để phát nhạc.");
+      });
+    }
+  });
+</script>
+
+</body>
+</html>
